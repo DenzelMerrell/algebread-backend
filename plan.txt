@@ -1,0 +1,20 @@
+DATA
+-food items
+-points for each item
+-math problems
+-answers for each problem
+-points for each math problem
+
+
+
+-need to keep track of time
+    -time resets for every problem 
+
+-hunger bar
+
+-food store
+-box goes green when a selection is able to be made
+    -red otherwise
+
+
+-food prices: $1 (%1), $5 (%5), $10 (10%)
