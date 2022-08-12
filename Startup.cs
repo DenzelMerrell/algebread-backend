@@ -33,23 +33,6 @@ namespace backend
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "backend", Version = "v1" });
             });
 
-            //cors
-            /*
-             var MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
-
-             services.AddCors(options =>
-             {
-                 options.AddPolicy(MyAllowSpecificOrigins,
-                                       policy =>
-                                       {
-                                           policy.WithOrigins("https://localhost:5000",
-                                                               "https://localhost:50001",
-                                                               "https://localhost:44315")
-                                                               .AllowAnyHeader()
-                                                               .AllowAnyMethod();
-                                       });
-             });
-            */
             services.AddCors();
         }
 
@@ -70,7 +53,7 @@ namespace backend
             app.UseCors(
                 options => options.WithOrigins("https://localhost:5000",
                                                                "https://localhost:50001",
-                                                               "https://localhost:44315").AllowAnyMethod()
+                                                               "https://localhost:44315", "https://algebread-backend.herokuapp.com/").AllowAnyMethod()
             );
 
             app.UseAuthorization();
