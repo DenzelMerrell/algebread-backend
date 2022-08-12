@@ -1,26 +1,22 @@
-﻿------------------------food_item----------------------------------
+------------------------food_item----------------------------------
 --$10 Foods
 INSERT INTO food_item (itemName)
 VALUES
 ('Apple'),
 ('Bread'),
-('Orange')
+('Orange'),
 
 --$15 Foods
-INSERT INTO food_item (itemName)
-VALUES
 ('Chicken Wing'),
 ('Sandwich'),
 ('Rice'),
-('Burrito')
+('Burrito'),
 
 --$30 Foods
-INSERT INTO food_item (itemName)
-VALUES
 ('Sushi'),
 ('Steak'),
 ('Lasagna'),
-('Lobster')
+('Lobster');
 
 ------------------------food_cost----------------------------------
 
@@ -29,23 +25,19 @@ INSERT INTO food_cost (itemId, cost)
 VALUES
 ('1', 10),
 ('2', 10),
-('3', 10)
+('3', 10),
 
 --$15 Foods
-INSERT INTO food_cost (itemId, cost)
-VALUES
 ('4', 15),
 ('5',  15),
 ('6', 15),
-('7', 15)
+('7', 15),
 
 --$30 Foods
-INSERT INTO food_cost (itemId, cost)
-VALUES
 ('8', 30),
 ('9', 30),
 ('10', 30),
-('11', 30)
+('11', 30);
 
 ------------------------problems----------------------------------
 INSERT INTO problem (problem)
@@ -59,7 +51,7 @@ VALUES
 ('(6k+4)/2 = 2k − 11. Solve for k.'),
 ('Find the distance between points (-4 , -5) and (-1 , -1).'),
 ('x − 7y = −11 ; 5x + 2y = −18. Find x.'),
-('|-2 x + 2| -3 = -3. Find x')
+('|-2 x + 2| -3 = -3. Find x');
 
 
 ------------------------problem_payment----------------------------------
@@ -74,7 +66,7 @@ VALUES
 (6, 10),
 (7, 15),
 (8, 15),
-(9, 15)
+(9, 15);
 
 ------------------------problem_answer----------------------------------
 INSERT INTO problem_answer (problemId, answer)
@@ -88,6 +80,6 @@ VALUES
 (6, '-13'),
 (7, '5'),
 (8,'-4'),
-(9, '1')
+(9, '1');
 
 

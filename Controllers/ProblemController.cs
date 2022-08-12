@@ -10,7 +10,8 @@ namespace Backend.Controllers {
     public class ProblemsController {
         [HttpGet]
         public ProblemModel GetProblem() {
-            string connString = "Data Source=DESKTOP-UAUG4NO;Initial Catalog=Algebread;Integrated Security=true;";
+            DotNetEnv.Env.Load();
+            string connString = Environment.GetEnvironmentVariable("DATABASE_URL");
             SqlConnection conn = new SqlConnection(connString);
             conn.Open();
 

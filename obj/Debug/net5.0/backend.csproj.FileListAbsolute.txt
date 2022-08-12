@@ -105,3 +105,7 @@ C:\Users\heatf\Documents\Code\Web_Dev\Portfolio Projects\Algebread\backend\backe
 C:\Users\heatf\Documents\Code\Web_Dev\Portfolio Projects\Algebread\backend\backend\obj\Debug\net5.0\ref\backend.dll
 C:\Users\heatf\Documents\Code\Web_Dev\Portfolio Projects\Algebread\backend\backend\obj\Debug\net5.0\backend.pdb
 C:\Users\heatf\Documents\Code\Web_Dev\Portfolio Projects\Algebread\backend\backend\obj\Debug\net5.0\backend.genruntimeconfig.cache
+C:\Users\heatf\Documents\Code\Web_Dev\Portfolio Projects\Algebread\backend\backend\bin\Debug\net5.0\package-lock.json
+C:\Users\heatf\Documents\Code\Web_Dev\Portfolio Projects\Algebread\backend\backend\bin\Debug\net5.0\package.json
+C:\Users\heatf\Documents\Code\Web_Dev\Portfolio Projects\Algebread\backend\backend\bin\Debug\net5.0\DotNetEnv.dll
+C:\Users\heatf\Documents\Code\Web_Dev\Portfolio Projects\Algebread\backend\backend\bin\Debug\net5.0\Sprache.dll
