@@ -11,7 +11,7 @@ namespace Backend.Controllers {
         [HttpGet]
         public ProblemModel GetProblem() {
             DotNetEnv.Env.Load();
-            string connString = Environment.GetEnvironmentVariable("DATABASE_URL");
+            string connString = "Data Source=" + Environment.GetEnvironmentVariable("DATABASE_URL");
             SqlConnection conn = new SqlConnection(connString);
             conn.Open();
 

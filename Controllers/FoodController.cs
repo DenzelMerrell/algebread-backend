@@ -16,9 +16,10 @@ namespace Backend.Controllers {
     [Route("Food")]
     public class Food: Controller {
         [HttpGet]
-        public string GetFood() {
+        public string GetFood() { 
+            return "Response from backend food controller";
             DotNetEnv.Env.Load();
-            string connString = Environment.GetEnvironmentVariable("DATABASE_URL");
+            string connString = "Data Source=" + Environment.GetEnvironmentVariable("DATABASE_URL");
             SqlConnection conn = new SqlConnection(connString);
             conn.Open();
 
