@@ -44,10 +44,10 @@ namespace Backend.Controllers {
                 //Get all food items
                 
                 NpgsqlCommand cmd = new NpgsqlCommand(query, conn);
-                
-                using (NpgsqlDataReader reader = cmd.ExecuteReader())
-                {
-                    return "Here";
+
+                //using (NpgsqlDataReader reader = cmd.ExecuteReader())
+                //{
+                NpgsqlDataReader reader = cmd.ExecuteReader();
                     while (reader.Read())
                     {
                         // FoodModel item = new FoodModel()
@@ -55,7 +55,7 @@ namespace Backend.Controllers {
                         var cost = Int32.Parse(reader.GetValue(1).ToString());
                         items.Add(new FoodModel(foodName, cost));
                     }
-                }
+                //}
             }
             catch(Exception ex)
             {
