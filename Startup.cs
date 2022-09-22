@@ -50,10 +50,6 @@ namespace backend
                 app.UseSwagger();
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "backend v1"));
             }
-            else
-            {
-                app.UseHsts();
-            }
 
             app.UseHttpsRedirection();
 
@@ -61,8 +57,8 @@ namespace backend
 
             app.UseCors(
                 options => options.WithOrigins("https://localhost:5000",
-                                                               "https://localhost:50001",
-                                                               "https://localhost:44315", "https://algebread-backend.herokuapp.com/", "https://algebread.herokuapp.com/").AllowAnyMethod()
+                                                               "https://localhost:5001",
+                                                               "https://localhost:44315", "https://algebread-backend.herokuapp.com/", "https://algebread.herokuapp.com/", "https://algebread.herokuapp.com/food").AllowAnyMethod()
             );
 
             app.UseAuthorization();
