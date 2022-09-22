@@ -59,7 +59,7 @@ namespace Backend.Controllers {
             catch(Exception ex)
             {
                 conn.Close();
-                Console.WriteLine("Error: " + ex.Message);
+                return "Error: " + ex.Message;
             }
             return items[0].name;
             var itemJson = JsonConvert.SerializeObject(items);
