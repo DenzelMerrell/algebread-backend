@@ -30,7 +30,6 @@ namespace Backend.Controllers {
             connString += "Database=" + Environment.GetEnvironmentVariable("DATABASE");
             
             //string connString = new ConfigurationBuilder().AddJsonFile("appsettings.json").Build().GetSection("ConnectionStrings")["DefaultConnection"];
-            
 
             string query = "SELECT itemName, cost FROM food_item"
                 + " JOIN food_cost ON food_item.itemId = food_cost.itemId";
