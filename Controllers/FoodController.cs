@@ -29,26 +29,41 @@ namespace Backend.Controllers {
             connString += "Port=" + Environment.GetEnvironmentVariable("PORT");
             connString += "Database=" + Environment.GetEnvironmentVariable("DATABASE");
             //string connString = new ConfigurationBuilder().AddJsonFile("appsettings.json").Build().GetSection("ConnectionStrings")["DefaultConnection"];
-            NpgsqlConnection conn = new NpgsqlConnection(connString);
-            conn.Open();
+            
 
-            //Get all food items
-            string query = "SELECT itemName, cost FROM food_item" 
-            + " JOIN food_cost ON food_item.itemId = food_cost.itemId";
-            NpgsqlCommand cmd = new NpgsqlCommand(query, conn);
+            string query = "SELECT itemName, cost FROM food_item"
+                + " JOIN food_cost ON food_item.itemId = food_cost.itemId";
             List<FoodModel> items = new List<FoodModel>();
-            using(NpgsqlDataReader reader = cmd.ExecuteReader()) 
+
+            NpgsqlConnection conn = new NpgsqlConnection(connString);
+            try
             {
-                while(reader.Read()) {
-                    // FoodModel item = new FoodModel()
-                    var foodName = reader.GetValue(0).ToString();
-                    var cost = Int32.Parse(reader.GetValue(1).ToString());
-                    items.Add(new FoodModel(foodName, cost));
+                conn.Open();
+
+                //Get all food items
+                
+                NpgsqlCommand cmd = new NpgsqlCommand(query, conn);
+                
+                using (NpgsqlDataReader reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        // FoodModel item = new FoodModel()
+                        var foodName = reader.GetValue(0).ToString();
+                        var cost = Int32.Parse(reader.GetValue(1).ToString());
+                        items.Add(new FoodModel(foodName, cost));
+                    }
                 }
+            }
+            catch(Exception ex)
+            {
+                conn.Close();
+                Console.WriteLine("Error: " + ex.Message);
             }
 
             var itemJson = JsonConvert.SerializeObject(items);
             return itemJson;
+
         }
     }
 } 
