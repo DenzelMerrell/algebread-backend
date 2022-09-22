@@ -47,6 +47,7 @@ namespace Backend.Controllers {
                 
                 using (NpgsqlDataReader reader = cmd.ExecuteReader())
                 {
+                    return "Here";
                     while (reader.Read())
                     {
                         // FoodModel item = new FoodModel()
@@ -61,7 +62,7 @@ namespace Backend.Controllers {
                 conn.Close();
                 return "Error: " + ex.Message;
             }
-            return items[0].name;
+            
             var itemJson = JsonConvert.SerializeObject(items);
             return itemJson;
 
