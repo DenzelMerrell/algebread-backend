@@ -28,7 +28,7 @@ namespace Backend.Controllers {
             connString += "Host=" + Environment.GetEnvironmentVariable("HOST");
             connString += "Port=" + Environment.GetEnvironmentVariable("PORT");
             connString += "Database=" + Environment.GetEnvironmentVariable("DATABASE");
-            return connString;
+            
             //string connString = new ConfigurationBuilder().AddJsonFile("appsettings.json").Build().GetSection("ConnectionStrings")["DefaultConnection"];
             
 
@@ -61,7 +61,7 @@ namespace Backend.Controllers {
                 conn.Close();
                 Console.WriteLine("Error: " + ex.Message);
             }
-
+            return items[0].name;
             var itemJson = JsonConvert.SerializeObject(items);
             return itemJson;
 
