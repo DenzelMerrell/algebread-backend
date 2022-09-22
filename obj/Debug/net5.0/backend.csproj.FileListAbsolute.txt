@@ -109,3 +109,7 @@ C:\Users\heatf\Documents\Code\Web_Dev\Portfolio Projects\Algebread\backend\backe
 C:\Users\heatf\Documents\Code\Web_Dev\Portfolio Projects\Algebread\backend\backend\bin\Debug\net5.0\package.json
 C:\Users\heatf\Documents\Code\Web_Dev\Portfolio Projects\Algebread\backend\backend\bin\Debug\net5.0\DotNetEnv.dll
 C:\Users\heatf\Documents\Code\Web_Dev\Portfolio Projects\Algebread\backend\backend\bin\Debug\net5.0\Sprache.dll
+C:\Users\heatf\Documents\Code\Web_Dev\Portfolio Projects\Algebread\backend\backend\bin\Debug\net5.0\Microsoft.Extensions.DependencyInjection.dll
+C:\Users\heatf\Documents\Code\Web_Dev\Portfolio Projects\Algebread\backend\backend\bin\Debug\net5.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\heatf\Documents\Code\Web_Dev\Portfolio Projects\Algebread\backend\backend\bin\Debug\net5.0\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\heatf\Documents\Code\Web_Dev\Portfolio Projects\Algebread\backend\backend\bin\Debug\net5.0\Npgsql.dll

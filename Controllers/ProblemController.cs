@@ -2,7 +2,11 @@ using System;
 using Microsoft.AspNetCore.Mvc;
 using System.Data.SqlClient;
 
+using Microsoft.Extensions.Configuration;
+
 using backend.Models;
+
+using Npgsql;
 
 namespace Backend.Controllers {
     [ApiController]
@@ -11,18 +15,24 @@ namespace Backend.Controllers {
         [HttpGet]
         public ProblemModel GetProblem() {
             DotNetEnv.Env.Load();
-            string connString = "Data Source=" + Environment.GetEnvironmentVariable("DATABASE_URL");
-            SqlConnection conn = new SqlConnection(connString);
-            conn.Open();
 
+            string connString = "User ID=" + Environment.GetEnvironmentVariable("USER_ID");
+            connString += "Password=" + Environment.GetEnvironmentVariable("PASSWORD");
+            connString += "Host=" + Environment.GetEnvironmentVariable("HOST");
+            connString += "Port=" + Environment.GetEnvironmentVariable("PORT");
+            connString += "Database=" + Environment.GetEnvironmentVariable("DATABASE");
+
+            NpgsqlConnection conn = new NpgsqlConnection(connString);
+            conn.Open();
             //Get the maximum problem id  (SELECT MAX(id) FROM problem)
-            string query = "SELECT MAX(problemId) FROM problem"; 
-            SqlCommand cmd = new SqlCommand(query, conn);
+            string query = "SELECT MAX(problemId) FROM problem";
+
             int max;
-            using(SqlDataReader reader = cmd.ExecuteReader()) 
+            NpgsqlCommand cmd = new NpgsqlCommand(query, conn);
+            using (NpgsqlDataReader reader = cmd.ExecuteReader())
             {
                 reader.Read();
-                max = (int) reader.GetValue(0);
+                max = (int)reader.GetValue(0);
             }
 
             //Generate random number from 1 to the max
@@ -41,7 +51,8 @@ namespace Backend.Controllers {
             cmd.CommandText = query;
             
             ProblemModel problemObj;
-            using(SqlDataReader myReader = cmd.ExecuteReader())
+
+            using (NpgsqlDataReader myReader = cmd.ExecuteReader())
             {
                 string problem, answer;
                 int payment;
@@ -51,7 +62,7 @@ namespace Backend.Controllers {
                 payment = Convert.ToInt32(myReader.GetValue(2));
                 problemObj = new ProblemModel(problem, answer, payment);
             }
-            
+
             //return the problem
             return problemObj;
         }

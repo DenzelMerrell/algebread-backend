@@ -12,6 +12,8 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
 
+//using Microsoft.EntityFrameworkCore.Tools;
+
 namespace backend
 {
     public class Startup
@@ -34,6 +36,9 @@ namespace backend
             });
 
             services.AddCors();
+
+            //var connection = @"Server=ec2-34-235-31-124.compute-1.amazonaws.com;Port=5432;User Id=yrijjuayvislga;Password=f6e13d907b808574fbf5166c87dcdf835294b4d0bbb455a5155e30767ee9c94b;Database=d1hpjtscqfoc76;";
+            //services.AddDbContext<BloggingContext>(options => options.UseNpgsql(connection)));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
