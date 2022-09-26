@@ -20,7 +20,7 @@ namespace Backend.Controllers {
     public class Food: Controller {
         [HttpGet]
         public string GetFood() { 
-            return "Response from backend food controller";
+            //return "Response from backend food controller";
             DotNetEnv.Env.Load();
             //string connString = Environment.GetEnvironmentVariable("DATABASE_URL");
             string connString = "User ID=" + Environment.GetEnvironmentVariable("USER_ID");
@@ -50,7 +50,7 @@ namespace Backend.Controllers {
                     {
                         // FoodModel item = new FoodModel()
                         var foodName = reader.GetValue(0).ToString();
-                        var cost = Int32.Parse(reader.GetValue(1).ToString());
+                        var cost = reader.GetInt32(1);
                         items.Add(new FoodModel(foodName, cost));
                     }
                 }
