@@ -20,7 +20,7 @@ namespace Backend.Controllers {
     public class Food: Controller {
         [HttpGet]
         public string GetFood() { 
-            //return "Response from backend food controller";
+            return "Response from backend food controller";
             DotNetEnv.Env.Load();
             //string connString = Environment.GetEnvironmentVariable("DATABASE_URL");
             string connString = "User ID=" + Environment.GetEnvironmentVariable("USER_ID");
