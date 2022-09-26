@@ -44,16 +44,15 @@ namespace Backend.Controllers {
                 
                 NpgsqlCommand cmd = new NpgsqlCommand(query, conn);
 
-                using (NpgsqlDataReader reader = cmd.ExecuteReader())
+                NpgsqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
                 {
-                    while (reader.Read())
-                    {
-                        // FoodModel item = new FoodModel()
-                        var foodName = reader.GetValue(0).ToString();
-                        var cost = reader.GetInt32(1);
-                        items.Add(new FoodModel(foodName, cost));
-                    }
+                    // FoodModel item = new FoodModel()
+                    var foodName = reader[0].ToString();
+                    var cost = Int32.Parse(reader[1].ToString());
+                    items.Add(new FoodModel(foodName, cost));
                 }
+                
 
                 conn.Close();
             }
