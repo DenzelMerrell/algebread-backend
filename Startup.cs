@@ -58,7 +58,7 @@ namespace backend
             app.UseCors(
                 options => options.WithOrigins("https://localhost:5000",
                                                                "https://localhost:5001",
-                                                               "https://localhost:44315", "https://algebread-backend.herokuapp.com/", "https://algebread.herokuapp.com/", "https://algebread.herokuapp.com/food").AllowAnyMethod()
+                                                               "https://localhost:44315", "https://algebread-backend.herokuapp.com/", "https://algebread-backend.herokuapp.com/food", "https://algebread.herokuapp.com/", "https://algebread.herokuapp.com/food").AllowAnyMethod()
             );
 
             app.UseAuthorization();
