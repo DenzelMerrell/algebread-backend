@@ -26,9 +26,9 @@ namespace Backend.Controllers {
             string connString = "User ID=" + Environment.GetEnvironmentVariable("USER_ID");
             connString += "Password=" + Environment.GetEnvironmentVariable("PASSWORD");
             connString += "Host=" + Environment.GetEnvironmentVariable("HOST");
-            connString += "Port=" + Environment.GetEnvironmentVariable("PORT");
+            //connString += "Port=" + Environment.GetEnvironmentVariable("PORT");
             connString += "Database=" + Environment.GetEnvironmentVariable("DATABASE");
-            connString += "SSL Mode=Require;Trust Server Certificate=true";
+            //connString += "SSL Mode=Require;Trust Server Certificate=true";
 
             //string connString = new ConfigurationBuilder().AddJsonFile("appsettings.json").Build().GetSection("ConnectionStrings")["DefaultConnection"];
 
