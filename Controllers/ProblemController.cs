@@ -62,7 +62,7 @@ namespace Backend.Controllers {
             problemObj = new ProblemModel(problem, answer, payment);
 
             //return the problem
-            return problemObj;
+            return problem;
 
         }
     }
