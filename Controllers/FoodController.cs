@@ -28,7 +28,8 @@ namespace Backend.Controllers {
             connString += "Host=" + Environment.GetEnvironmentVariable("HOST");
             connString += "Port=" + Environment.GetEnvironmentVariable("PORT");
             connString += "Database=" + Environment.GetEnvironmentVariable("DATABASE");
-            
+            connString += "SSL Mode=Require";
+
             //string connString = new ConfigurationBuilder().AddJsonFile("appsettings.json").Build().GetSection("ConnectionStrings")["DefaultConnection"];
 
             string query = "SELECT itemName, cost FROM food_item"
