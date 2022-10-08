@@ -13,7 +13,7 @@ namespace Backend.Controllers {
     [Route("problem")]
     public class ProblemsController {
         [HttpGet]
-        public ProblemModel GetProblem() {
+        public string GetProblem() {
             DotNetEnv.Env.Load();
 
             string connString = "User ID=" + Environment.GetEnvironmentVariable("USER_ID");
@@ -61,10 +61,12 @@ namespace Backend.Controllers {
                 answer = Convert.ToString(myReader.GetValue(1));
                 payment = Convert.ToInt32(myReader.GetValue(2));
                 problemObj = new ProblemModel(problem, answer, payment);
+                return problem;
             }
 
             //return the problem
-            return problemObj;
+            //return problemObj;
+            
         }
     }
 }
