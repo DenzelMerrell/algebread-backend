@@ -19,7 +19,7 @@ namespace Backend.Controllers {
             string connString = "User ID=" + Environment.GetEnvironmentVariable("USER_ID");
             connString += "Password=" + Environment.GetEnvironmentVariable("PASSWORD");
             connString += "Host=" + Environment.GetEnvironmentVariable("HOST");
-            connString += "Port=" + Environment.GetEnvironmentVariable("PORT");
+            //connString += "Port=" + Environment.GetEnvironmentVariable("PORT");
             connString += "Database=" + Environment.GetEnvironmentVariable("DATABASE");
 
             NpgsqlConnection conn = new NpgsqlConnection(connString);
