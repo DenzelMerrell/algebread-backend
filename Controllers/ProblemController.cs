@@ -34,7 +34,7 @@ namespace Backend.Controllers {
                 reader.Read();
                 max = (int)reader.GetValue(0);
             }
-
+            return "hi";
             //Generate random number from 1 to the max
             Random rand = new Random();
             int randomId = rand.Next(1, max);
@@ -52,21 +52,18 @@ namespace Backend.Controllers {
             
             ProblemModel problemObj;
 
-            using (NpgsqlDataReader myReader = cmd.ExecuteReader())
-            {
-                string problem, answer;
-                int payment;
-                myReader.Read();
-                problem = Convert.ToString(myReader.GetValue(0));
-                answer = Convert.ToString(myReader.GetValue(1));
-                payment = Convert.ToInt32(myReader.GetValue(2));
-                problemObj = new ProblemModel(problem, answer, payment);
-                return problem;
-            }
+            NpgsqlDataReader myReader = cmd.ExecuteReader();
+            string problem, answer;
+            int payment;
+            myReader.Read();
+            problem = Convert.ToString(myReader.GetValue(0));
+            answer = Convert.ToString(myReader.GetValue(1));
+            payment = Convert.ToInt32(myReader.GetValue(2));
+            problemObj = new ProblemModel(problem, answer, payment);
 
             //return the problem
-            //return problemObj;
-            
+            return problemObj;
+
         }
     }
 }
