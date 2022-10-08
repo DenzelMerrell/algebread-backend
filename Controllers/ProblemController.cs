@@ -13,7 +13,7 @@ namespace Backend.Controllers {
     [Route("problem")]
     public class ProblemsController {
         [HttpGet]
-        public string GetProblem() {
+        public ProblemModel GetProblem() {
             DotNetEnv.Env.Load();
 
             string connString = "User ID=" + Environment.GetEnvironmentVariable("USER_ID");
@@ -34,7 +34,6 @@ namespace Backend.Controllers {
                 reader.Read();
                 max = (int)reader.GetValue(0);
             }
-            return "hi";
             //Generate random number from 1 to the max
             Random rand = new Random();
             int randomId = rand.Next(1, max);
@@ -62,7 +61,7 @@ namespace Backend.Controllers {
             problemObj = new ProblemModel(problem, answer, payment);
 
             //return the problem
-            return problem;
+            return problemObj;
 
         }
     }
